@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #090c14;
+    color: white;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+.app {
+    max-width: 1400px;
+    margin: auto;
+    padding: 40px;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.header p {
+    margin-top: 8px;
+    color: #8f99ad;
+    font-size: 16px;
+}
+
+.scheduler-card,
+.calendar-card {
+    background: #111522;
+    border: 1px solid #252c3d;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.scheduler-card h2,
+.calendar-header h2 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #30384b;
+    background: #0c101a;
+    color: white;
+}
+
+.form-row button {
+    width: auto;
+    padding: 12px 18px;
+    background: #5f7cff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-row button:hover {
+    background: #4f6bea;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header p {
+    color: #8f99ad;
+    margin-top: 5px;
+}
+
+.event-count {
+    background: #1b2440;
+    color: #9db0ff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.day-column {
+    min-height: 330px;
+    background: #0d111c;
+    border: 1px solid #252c3d;
+    border-radius: 10px;
+    padding: 12px;
+    transition: border-color 0.2s;
+}
+
+.day-column:hover {
+    border-color: #3d4d73;
+}
+
+.day-column h3 {
+    margin: 0 0 14px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.event-card {
+    background: #192131;
+    border: 1px solid #273149;
+    border-left: 4px solid #6d8cff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: grab;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    border-color: #6178b5;
+}
+
+.event-card:active {
+    cursor: grabbing;
+    opacity: 0.7;
+}
+
+.event-card small {
+    color: #8995aa;
+}
+
+.event-card h4 {
+    margin: 7px 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.edit-button {
+    width: auto;
+    margin-top: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+    background: #334155;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background: #475569;
+}
+
+@media (max-width: 1000px) {
+
+    .calendar {
+        overflow-x: auto;
+        grid-template-columns: repeat(7, 150px);
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-row button {
+        width: 100%;
+    }
+
+}
+
+.performance-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: #111522;
+    border: 1px solid #252c3d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+.performance-panel h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.performance-panel p {
+    margin: 6px 0 0;
+    color: #8f99ad;
+    font-size: 14px;
+}
+
+.performance-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.performance-controls button {
+    width: auto;
+    padding: 10px 14px;
+    background: #334155;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.performance-controls button:hover {
+    background: #475569;
+}
+
+.clock {
+    color: #9db0ff;
+    font-size: 14px;
+    min-width: 130px;
+}
+
+.render-count {
+    display: block;
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 11px;
+}
